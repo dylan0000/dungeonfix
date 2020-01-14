@@ -1,6 +1,8 @@
 namespace SpriteKind {
     export const shop1 = SpriteKind.create()
     export const hp = SpriteKind.create()
+    export const boss = SpriteKind.create()
+    export const enemyshot = SpriteKind.create()
 }
 namespace myTiles {
     //% blockIdentity=images._tile
@@ -55,7 +57,8 @@ scene.onHitTile(SpriteKind.Player, 9, function (sprite2) {
 . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Enemy)
-            enemyghost.follow(mySprite, 30)
+            enemyghost.follow(mySprite, 40)
+            enemyghost.setFlag(SpriteFlag.BounceOnWall, true)
             scene.place(value, enemyghost)
         }
         scene.setTile(9, img`
@@ -163,6 +166,9 @@ c c b c c c c c c c c c c b c c
 c c c c c c c b c c c c c c c c 
 c c c c c c c c c c c c c c c c 
 `, false)
+})
+scene.onHitWall(SpriteKind.boss, function (sprite2) {
+    scene.placeOnRandomTile(boss2, 12)
 })
 scene.onHitTile(SpriteKind.Projectile, 4, function (sprite2) {
     if (level == 2) {
@@ -322,6 +328,14 @@ scene.onHitTile(SpriteKind.Player, 12, function (sprite2) {
         levels()
     }
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.boss, function (sprite2, otherSprite) {
+    info.player1.changeLifeBy(-1)
+    scene.placeOnRandomTile(boss2, 12)
+})
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.boss, function (sprite2, otherSprite) {
+    info.player3.changeScoreBy(-1)
+    sprite2.destroy()
+})
 // ammo collection
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite2, otherSprite) {
     if (info.score() <= 20) {
@@ -333,20 +347,21 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite2, otherSp
     }
 })
 function finalBos () {
+    level = 3
     scene.setTileMap(img`
-f f f f f . . f f f f f f f 
-f 6 . . . . . . . . . . 6 f 
-f . . . . . . . . . . . . f 
-f . . . . . . . . . . . . f 
-f . . . . . . . . . . . . f 
-f 3 . . . . . . . . . . 3 f 
-f 3 . . . . . . . . . . 3 f 
-f 3 . . . . . . . . . . 3 f 
-f 3 . . . . . . . . . . 3 f 
-f . . . . . . . . . . . . f 
-f . . . . . . . . . . . . f 
-f . . . . . . . . . . . . f 
-f 6 . . . . d . . . . . 6 f 
+f f f f f c c f f f f f f f 
+f 6 c c c c c c c c c c 6 f 
+f c c c c c c c c c c c c f 
+f c c a 8 8 8 8 8 a a c c f 
+f c c a 8 8 8 8 8 8 8 c c f 
+f 3 c 8 8 8 8 8 8 8 8 c 3 f 
+f 3 c 8 8 8 8 8 8 8 8 c 3 f 
+f 3 c 8 8 8 8 8 8 8 8 c 3 f 
+f 3 c 8 8 8 8 8 8 8 8 c 3 f 
+f c c 8 8 8 8 8 8 8 a c c f 
+f c c a a 8 8 8 8 8 a c c f 
+f c c c c c c c c c c c c f 
+f 6 c c c c d c c c c c 6 f 
 f f f f f f f f f f f f f f 
 `)
     scene.setTile(13, img`
@@ -385,6 +400,24 @@ c c c c c c c c c c c c c c c c
 c c c c c c c c c c c c c c c c 
 c c c c c c c c c c c c c c c c 
 `, false)
+    scene.setTile(12, img`
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+`, false)
     scene.setTile(3, img`
 c c c c c c c c c c c c c c c c 
 c c c c c c c c c b c c c c b c 
@@ -403,9 +436,44 @@ c c b c c c c c c c c c c b c c
 c c c c c c c b c c c c c c c c 
 c c c c c c c c c c c c c c c c 
 `, false)
+    scene.setTile(8, img`
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+`, false)
+    scene.setTile(10, img`
+b b b b b b b b b b b b b b b b 
+b 1 1 1 1 1 1 1 1 1 1 1 1 1 1 b 
+b 1 1 1 1 1 1 1 1 1 1 1 1 1 1 b 
+b 1 1 1 1 1 1 1 1 1 1 1 1 1 1 b 
+b 1 1 1 1 1 1 1 1 1 1 1 1 1 1 b 
+b 1 1 1 1 1 1 1 1 1 1 1 1 1 1 b 
+b 1 1 1 1 1 1 1 1 1 1 1 1 1 1 b 
+b 1 1 1 1 1 1 1 1 1 1 1 1 1 1 b 
+b 1 1 1 1 1 1 1 1 1 1 1 1 1 1 b 
+b 1 1 1 1 1 1 1 1 1 1 1 1 1 1 b 
+b 1 1 1 1 1 1 1 1 1 1 1 1 1 1 b 
+b 1 1 1 1 1 1 1 1 1 1 1 1 1 1 b 
+b 1 1 1 1 1 1 1 1 1 1 1 1 1 1 b 
+b 1 1 1 1 1 1 1 1 1 1 1 1 1 1 b 
+b 1 1 1 1 1 1 1 1 1 1 1 1 1 1 b 
+b b b b b b b b b b b b b b b b 
+`, true)
     tiles.placeOnTile(mySprite, tiles.getTileLocation(6, 0))
-    scene.setBackgroundColor(12)
-    for (let value of scene.getTilesByType(6)) {
+    for (let value2 of scene.getTilesByType(6)) {
         heart = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -424,9 +492,30 @@ c c c c c c c c c c c c c c c c
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.hp)
-        scene.place(value, heart)
+        scene.place(value2, heart)
     }
-    for (let value3 of scene.getTilesByType(3)) {
+    for (let value3 of scene.getTilesByType(13)) {
+        boss2 = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . b b b . . . . . . 
+. . . . . . . b b b . . . . . . 
+. . . . . . b b b b b . . . . . 
+. . . . b . b f f f b . b . . . 
+. . . b b b f 1 1 1 f b b b . . 
+. . b b b f 1 1 2 1 1 f b b b . 
+. . b b b f 1 1 2 1 1 f b b b . 
+. . b b b f 1 1 2 1 1 f b b b . 
+. . b b b f 1 1 2 1 1 f b b b . 
+. . . b b b f 1 1 1 f b b b . . 
+. . . . b . b f f f b . b . . . 
+. . . . . . b b b b b . . . . . 
+. . . . . . . b b b . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.boss)
+        scene.place(value3, boss2)
+    }
+    for (let value32 of scene.getTilesByType(3)) {
         ammo = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -453,8 +542,11 @@ c c c c c c c c c c c c c c c c
 . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Food)
-        scene.place(value3, ammo)
+        scene.place(value32, ammo)
     }
+    info.player3.setScore(50)
+    off = 1
+    on = 0
 }
 scene.onHitTile(SpriteKind.Player, 8, function (sprite2) {
     if (level == 1) {
@@ -474,30 +566,37 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite2, ot
     }
 })
 scene.onHitTile(SpriteKind.Player, 10, function (sprite2) {
-    shop.say("here take this", 500)
-    pause(500)
-    guntype += 1
-    game.splash("you can now shoot 2 bullets for 1")
-    shop.destroy()
-    scene.setTile(10, img`
+    if (level == 2) {
+        shop.say("here take this", 500)
+        pause(500)
+        guntype += 1
+        game.splash("you can now shoot 2 bullets for 1")
+        shop.destroy()
+        scene.setTile(10, img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-. . . f f f f f f f f f . . . . 
-. . f 5 5 5 5 5 5 5 5 5 f . . . 
-. . . f 5 5 5 5 5 5 f f 5 f . . 
-. . f 5 5 5 5 5 5 5 5 f 5 f . . 
-. . . f 5 5 5 5 5 5 5 5 5 f . . 
-. . f 5 5 5 5 5 5 5 5 f 5 f . . 
-. . . f 5 5 5 5 5 5 f f 5 f . . 
-. . f 5 5 5 5 5 5 5 5 5 f . . . 
-. . . f f f f f f f f f . . . . 
+. . . . f f f f f f f f . . . . 
+. . . f 5 5 5 5 5 5 5 5 f . . . 
+. . . . f 5 5 5 5 5 f f 5 f . . 
+. . . f 5 5 5 5 5 5 5 f 5 f . . 
+. . . . f 5 5 5 5 5 5 5 5 f . . 
+. . . f 5 5 5 5 5 5 5 f 5 f . . 
+. . . . f 5 5 5 5 5 f f 5 f . . 
+. . . f 5 5 5 5 5 5 5 5 f . . . 
+. . . . f f f f f f f f . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, false)
-    mySprite.say("rip", 500)
+        mySprite.say("rip", 500)
+    }
+    if (level == 3) {
+        controller.moveSprite(mySprite, 300, 300)
+        on = 1
+        info.startCountdown(0.2)
+    }
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (guntype == 1) {
@@ -743,7 +842,7 @@ c d d d d b d d d d b c d d b b
 c d d d d b d d d d b c d d b b 
 a c c c c c c c c c c c c c c c 
 `, true)
-        for (let value2 of scene.getTilesByType(5)) {
+        for (let value22 of scene.getTilesByType(5)) {
             enemyghost = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -771,9 +870,9 @@ a c c c c c c c c c c c c c c c
 . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Enemy)
             enemyghost.follow(mySprite, 50)
-            scene.place(value2, enemyghost)
+            scene.place(value22, enemyghost)
         }
-        for (let value3 of scene.getTilesByType(3)) {
+        for (let value33 of scene.getTilesByType(3)) {
             ammo = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -800,7 +899,7 @@ a c c c c c c c c c c c c c c c
 . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Food)
-            scene.place(value3, ammo)
+            scene.place(value33, ammo)
         }
     }
     if (level == 2) {
@@ -1293,7 +1392,7 @@ b b b b b b b b b b b b b b b b
 `, SpriteKind.Food)
             scene.place(value4, ammo)
         }
-        for (let value of scene.getTilesByType(10)) {
+        for (let value5 of scene.getTilesByType(10)) {
             shop = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -1312,9 +1411,9 @@ b b b b b b b b b b b b b b b b
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.shop1)
-            scene.place(value, shop)
+            scene.place(value5, shop)
         }
-        for (let value of scene.getTilesByType(6)) {
+        for (let value6 of scene.getTilesByType(6)) {
             heart = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -1333,7 +1432,7 @@ b b b b b b b b b b b b b b b b
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.hp)
-            scene.place(value, heart)
+            scene.place(value6, heart)
         }
     }
 }
@@ -1360,6 +1459,16 @@ scene.onHitTile(SpriteKind.Player, 7, function (sprite2) {
         enemyghost.destroy()
         sprite()
         tiles.placeOnTile(mySprite, tiles.getTileLocation(12, 17))
+        game.over(false)
+    }
+})
+info.onCountdownEnd(function () {
+    if (off == 0) {
+        boss2.follow(mySprite, 75)
+        off = 1
+    } else if (on == 1) {
+        controller.moveSprite(mySprite, 100, 100)
+        on = 0
     }
 })
 function lobby () {
@@ -1530,7 +1639,11 @@ a c c c c c c c c c c c c c c c
     }
 }
 scene.onHitTile(SpriteKind.Projectile, 10, function (sprite2) {
-    shop.say("dont shoot me", 500)
+    if (level == 2) {
+        shop.say("dont shoot me", 500)
+    } else {
+        mySprite.say("what a waste")
+    }
 })
 scene.onHitTile(SpriteKind.Projectile, 12, function (sprite2) {
     scene.setTile(12, img`
@@ -1551,7 +1664,7 @@ d b b b b b b b b b b b b b b c
 d b b b b b b b b b b b b b b c 
 c c c c c c c c c c c c c c c a 
 `, false)
-    for (let value of scene.getTilesByType(11)) {
+    for (let value7 of scene.getTilesByType(11)) {
         enemyghost = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -1578,8 +1691,9 @@ c c c c c c c c c c c c c c c a
 . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Enemy)
-        enemyghost.follow(mySprite, 30)
-        scene.place(value, enemyghost)
+        enemyghost.follow(mySprite, 40)
+        enemyghost.setFlag(SpriteFlag.BounceOnWall, true)
+        scene.place(value7, enemyghost)
     }
     tiles.placeOnTile(mySprite, tiles.getTileLocation(24, 49))
 })
@@ -1635,10 +1749,13 @@ b b b b b b b b b b b b b b b b
 })
 let bullet: Sprite = null
 let shop: Sprite = null
+let on = 0
+let off = 0
 let ammo: Sprite = null
 let heart: Sprite = null
 let bulletdirection = 0
 let bulletvelocity = 0
+let boss2: Sprite = null
 let mySprite: Sprite = null
 let enemyghost: Sprite = null
 let guntype = 0
@@ -1652,4 +1769,27 @@ info.setLife(5)
 // ammo
 info.setScore(20)
 guntype = 1
-finalBos()
+game.onUpdateInterval(1500, function () {
+	
+})
+game.onUpdate(function () {
+    if (level == 3) {
+        if (info.player3.score() <= 0) {
+            game.over(true)
+        }
+    }
+})
+game.onUpdateInterval(Math.randomRange(5000, 10000), function () {
+    if (level == 3) {
+        if (off == 1) {
+            boss2.follow(mySprite, 300)
+            off = 0
+            info.startCountdown(0.3)
+        }
+    }
+})
+game.onUpdateInterval(1000, function () {
+    if (level == 3) {
+        boss2.follow(mySprite, 75)
+    }
+})
