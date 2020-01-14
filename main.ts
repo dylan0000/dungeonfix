@@ -79,7 +79,7 @@ d b b b b b b b b b b b b b b c
 d b b b b b b b b b b b b b b c 
 c c c c c c c c c c c c c c c a 
 `, false)
-        tiles.placeOnTile(mySprite, tiles.getTileLocation(25, 18))
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(39, 18))
     }
 })
 function sprite () {
@@ -350,7 +350,7 @@ function finalBos () {
     level = 3
     scene.setTileMap(img`
 f f f f f c c f f f f f f f 
-f 6 c c c c c c c c c c 6 f 
+f 6 c c c c c 3 c 3 c c 6 f 
 f c c c c c c c c c c c c f 
 f c c a 8 8 8 8 8 a a c c f 
 f c c a 8 8 8 8 8 8 8 c c f 
@@ -361,7 +361,7 @@ f 3 c 8 8 8 8 8 8 8 8 c 3 f
 f c c 8 8 8 8 8 8 8 a c c f 
 f c c a a 8 8 8 8 8 a c c f 
 f c c c c c c c c c c c c f 
-f 6 c c c c d c c c c c 6 f 
+f 6 c c c 3 d 3 c c c c 6 f 
 f f f f f f f f f f f f f f 
 `)
     scene.setTile(13, img`
@@ -685,7 +685,7 @@ function levels () {
         game.splash("tutorial")
         game.splash("Controls", "Keyboard X to rotate direction")
         game.splash("Space bar to shoot", "Arrow keys to move")
-        game.splash("shoot buttons to activiate", "collect ammo")
+        game.splash("shoot buttons to activiate", "also collect ammo too")
         sprite()
         scene.setTileMap(img`
 f f f f f f 7 7 7 f f f f f f f f f f f f f f f f f f f f f 
@@ -918,15 +918,15 @@ f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f f f f f f f f f . . . . . . . . . . . . . 5 f f f f f f f f f f f f f f f f f f f f f f f f f f 
-f f f f f f f f f f . . . . . . . . . f f f f f . 5 . . . . 5 . . . . 5 . . f f f f f f f f f f f f f f f f f f f f f f f f f f 
-f f f f f f f f f f . . . . . . . . . f f f f f . . . . . . . . . . . . . . f f f f f f f f f f f f f f f f f f f f f f f f f f 
-f f f f f f f f f f . . . . . . . . . f f f f f . . . . . . . . . 5 . . . 3 f f f f f f f f f f f f f f f f f f f f f f f f f f 
-f f f f f f f f f f . . . . . . . . . f f f f f . . . 5 . . . f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
-f f f f f f f f f f . . . . . . . . . f f f f f . . . . . . . f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
-f f f f f f f f f f . . . . . . . . . f f f f f . . . . . . . f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
-f f f f f f f f f f . . . . . . 5 5 . . . 9 9 . . . . . . . . f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
-f f f f f f f f f f . . . . . . 5 5 . . . 9 9 . . . . 5 . . 7 7 f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f f f f f f f f f . . . . . . . . . . . . . 5 . . f f f f f f f f f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f f f f f f f f f . 5 . . . . 5 . . . . 5 . . . . f f f f f f f f f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f f f f f f f f f . . . . . . . . . . . . . . . . f f f f f f f f f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f 3 3 . . f f f f f . . . . . . . . . 5 . . . 3 . . f f f f f f f f f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f . . . . f f f f f . . . 5 . . . f f f f f f . . . f f f f f f f f f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f . . . . f f f f f . . . . . . . f f f f f f . . . f f f f f f f f f f f f f f f f f f f f f f f f 
+f f f f f f f f f f . . . . . . . . . f f f f f 5 . . . . 5 . f f f f f f 3 . . f f f f f f f f f f f f f f f f f f f f f f f f 
+f f f f f f f f f f . . . . . . 5 5 . . . 9 9 . . . . . . . . . . . . . . . . . f f f f f f f f f f f f f f f f f f f f f f f f 
+f f f f f f f f f f . . . . . . 5 5 . . . 9 9 . . . . 5 . . 7 7 . . . . . . . . f f f f f f f f f f f f f f f f f f f f f f f f 
 f f f f f f f f f f . . . . . . . . . f f f f f f f . . . 7 7 f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f f f f f f f f . . . 7 7 f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f f f f f f f f . . 5 . 7 f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
@@ -937,14 +937,14 @@ f f f f f f f f f f f f f f f f f f f f f f f f f f 7 7 . . 7 . . . . . . . . . 
 f f f f f f f f f f f f f f f f f f f f f f f f f f 7 7 . . . . . . . . . . . f f f f f . . f f 7 7 7 7 7 7 7 7 f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f f f f f f f f 7 7 . 5 . . 5 . . 5 . . . f f f f f . . . . . . . . . . . 7 f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f . . f f f f f . . . . . . . . . . . 7 f f f f f f f f 
-f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f e e f f f f f f f f f 7 . . . . . . 7 f f f f f f f f 
-f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f e e f f f f f f f f f 7 . . . . . . 7 f f f f f f f f 
+f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f e e f f f f f f f f f 7 e e e e e e 7 f f f f f f f f 
+f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f e e f f f f f f f f f 7 5 . 5 . 5 . 7 f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f . . f f f f f f f f f 7 . . . . . . 7 f f f f f f f f 
-f f f f f f f f f f f f f f f f f f f 7 7 7 7 7 7 7 7 . 5 5 5 f f f f f f . . f f f f f f f f f 7 . . . . . . 7 f f f f f f f f 
+f f f f f f f f f f f f f f f f f f f 7 7 7 7 7 7 7 7 . 5 5 5 f f f f f f . . f f f f f f f f f 7 . . 5 . . . 7 f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f 7 7 7 7 7 7 7 . d d d d f f f f f f . . f f f f f f f f f 7 . . . . . . 7 f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f 7 7 7 7 7 7 . . . . . . . . d d . . . . f f f f f f f f f 7 . . . a . . 7 f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f 7 7 7 7 5 5 d . . . . . . . d d . . . . f f f f f f f f f 7 7 . . 3 . . 7 f f f f f f f f 
-f f f f f f f f f f f f f f f f f f f 7 7 . . 5 5 d . . . . . . . d d . . . . f f f f f f f f f f 7 . . . . . 7 f f f f f f f f 
+f f f f f f f f f f f f f f f f f f f 7 7 . . 5 5 d . . . . . . . d d . . . 3 f f f f f f f f f f 7 . . . . . 7 f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f 7 . . . 5 5 d 3 . . . . . f f f f f f f f f f f f f f f f f 7 . . . . . 7 f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f 7 . . f f f f f f f f f f f f f f f f f f f f f f f f f f f 7 . . . . . 7 f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f 7 . . f f f f f f f f f f f f f f f f f f f f f f f f f f f 7 7 . . 7 7 7 f f f f f f f f 
@@ -1645,7 +1645,7 @@ scene.onHitTile(SpriteKind.Projectile, 10, function (sprite2) {
     if (level == 2) {
         shop.say("dont shoot me", 500)
     } else {
-        mySprite.say("what a waste")
+        mySprite.say("!", 1)
     }
 })
 scene.onHitTile(SpriteKind.Projectile, 12, function (sprite2) {
