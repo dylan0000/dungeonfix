@@ -101,20 +101,6 @@ function sprite () {
     controller.moveSprite(mySprite)
     scene.cameraFollowSprite(mySprite)
 }
-function finalBos () {
-    if (true) {
-        scene.setTileMap(img`
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-`)
-    }
-}
 function buttonpress () {
     if (level == 1) {
         scene.setTile(2, img`
@@ -203,22 +189,22 @@ c c c c c c c c c c c c c c c a
 })
 scene.onHitTile(SpriteKind.Projectile, 13, function (sprite2) {
     scene.setTile(13, img`
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c b c c c c b c 
-c c b c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c b c c c c b c c c c 
-c c c c c c c c c c c c c c c c 
-c b c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c b c c c c c b c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c c c c c c c c c c c c c c c 
-c c b c c c c c c c c c c b c c 
-c c c c c c c b c c c c c c c c 
-c c c c c c c c c c c c c c c c 
+b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b 
 `, false)
     tiles.placeOnTile(mySprite, tiles.getTileLocation(29, 37))
 })
@@ -346,10 +332,136 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite2, otherSp
         mySprite.say("full", 200)
     }
 })
+function finalBos () {
+    scene.setTileMap(img`
+f f f f f . . f f f f f f f 
+f 6 . . . . . . . . . . 6 f 
+f . . . . . . . . . . . . f 
+f . . . . . . . . . . . . f 
+f . . . . . . . . . . . . f 
+f 3 . . . . . . . . . . 3 f 
+f 3 . . . . . . . . . . 3 f 
+f 3 . . . . . . . . . . 3 f 
+f 3 . . . . . . . . . . 3 f 
+f . . . . . . . . . . . . f 
+f . . . . . . . . . . . . f 
+f . . . . . . . . . . . . f 
+f 6 . . . . d . . . . . 6 f 
+f f f f f f f f f f f f f f 
+`)
+    scene.setTile(13, img`
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+`, false)
+    scene.setTile(6, img`
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+`, false)
+    scene.setTile(3, img`
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c b c c c c b c 
+c c b c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c b c c c c b c c c c 
+c c c c c c c c c c c c c c c c 
+c b c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c b c c c c c b c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+c c b c c c c c c c c c c b c c 
+c c c c c c c b c c c c c c c c 
+c c c c c c c c c c c c c c c c 
+`, false)
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(6, 0))
+    scene.setBackgroundColor(12)
+    for (let value of scene.getTilesByType(6)) {
+        heart = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . 2 2 . . 2 2 . . . . . 
+. . . . 2 2 2 2 2 2 2 2 . . . . 
+. . . 2 2 2 2 2 2 2 2 2 2 . . . 
+. . . 2 2 2 2 2 2 2 2 2 2 . . . 
+. . . 2 2 2 2 2 2 2 2 2 2 . . . 
+. . . 2 2 2 2 2 2 2 2 2 2 . . . 
+. . . . 2 2 2 2 2 2 2 2 . . . . 
+. . . . . 2 2 2 2 2 2 . . . . . 
+. . . . . . 2 2 2 2 . . . . . . 
+. . . . . . . 2 2 . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.hp)
+        scene.place(value, heart)
+    }
+    for (let value3 of scene.getTilesByType(3)) {
+        ammo = sprites.create(img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . f f f f f f f f f f . . . . . . . . 
+. . . . . . f 5 5 f 5 5 f 5 5 f . . . . . . . . 
+. . . . . . f 5 5 f 5 5 f 5 5 f . . . . . . . . 
+. . . . . . f 5 5 f 5 5 f 5 5 f . . . . . . . . 
+. . . . . . f 5 5 f 5 5 f 5 5 f . . . . . . . . 
+. . . . . . f 5 5 f 5 5 f 5 5 f . . . . . . . . 
+. . . . . . f 5 5 f 5 5 f 5 5 f . . . . . . . . 
+. . . . . . f 5 5 f 5 5 f 5 5 f . . . . . . . . 
+. . . . . . f 5 5 f 5 5 f 5 5 f . . . . . . . . 
+. . . . . . f 5 5 f 5 5 f 5 5 f . . . . . . . . 
+. . . . . . f 5 5 f 5 5 f 5 5 f . . . . . . . . 
+. . . . . . . f f . f f . f f . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`, SpriteKind.Food)
+        scene.place(value3, ammo)
+    }
+}
 scene.onHitTile(SpriteKind.Player, 8, function (sprite2) {
     if (level == 1) {
         game.splash("you finished!", "now go play for real")
         game.splash("restart game")
+    } else {
+        finalBos()
     }
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite2, otherSprite) {
@@ -727,7 +839,7 @@ f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f e e f 
 f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f e e f f f f f f f f f 7 . . . . . . 7 f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f . . f f f f f f f f f 7 . . . . . . 7 f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f 7 7 7 7 7 7 7 7 . 5 5 5 f f f f f f . . f f f f f f f f f 7 . . . . . . 7 f f f f f f f f 
-f f f f f f f f f f f f f f f f f f f 7 7 7 7 7 7 7 . . . . . f f f f f f . . f f f f f f f f f 7 . . . . . . 7 f f f f f f f f 
+f f f f f f f f f f f f f f f f f f f 7 7 7 7 7 7 7 . d d d d f f f f f f . . f f f f f f f f f 7 . . . . . . 7 f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f 7 7 7 7 7 7 . . . . . . . . d d . . . . f f f f f f f f f 7 . . . a . . 7 f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f 7 7 7 7 5 5 d . . . . . . . d d . . . . f f f f f f f f f 7 7 . . 3 . . 7 f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f 7 7 . . 5 5 d . . . . . . . d d . . . . f f f f f f f f f f 7 . . . . . 7 f f f f f f f f 
@@ -739,8 +851,8 @@ f f f f f f f f f f f f f f f f f f f 7 . . f f f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f c c c . . . . . . . . . . . f f f f f f f f f f f f f f f f f 7 7 7 7 f f f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f c c c b . . . b . . . b . . f f f f f f f f f f f f f f f f f f 7 7 f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f b . . . . b . . . b . . . b f f f f f f f f f . 2 . . . . . . . 3 3 f f f f f f f f f f f 
-f f f f f f f f f f f f f f f . . 1 1 . . . b . . . b . . . b . . f f f f f f f f f b . b . b . b . b 3 3 f f f f f f f f f f f 
-f f f f f f f f f f f f f f f . . 1 1 . b . . . . . . . . . . . . . 4 4 4 4 4 4 4 . . . . . . . . . . f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f 3 . 1 1 . . . b . . . b . . . b . . f f f f f f f f f b . b . b . b . b 3 3 f f f f f f f f f f f 
+f f f f f f f f f f f f f f f 3 . 1 1 . b . . . . . . . . . . . . . 4 4 4 4 4 4 4 . . . . . . . . . . f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f . . f f f . . . . . . . . . b . b . . 4 4 4 4 4 4 4 . . b . b . b . b . f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f . . f 7 f 3 . . . . . . . . . . . 3 f f f f f f f f f . . . . . . . . . f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f . . f 7 f 3 . . . . . . . . . . . 3 f 7 7 7 7 7 7 7 f b . b . b . b . b f f f f f f f f f f f f f 
@@ -1521,10 +1633,10 @@ b b b b b b b b b b b b b b b b
 `, false)
     }
 })
-let heart: Sprite = null
-let ammo: Sprite = null
 let bullet: Sprite = null
 let shop: Sprite = null
+let ammo: Sprite = null
+let heart: Sprite = null
 let bulletdirection = 0
 let bulletvelocity = 0
 let mySprite: Sprite = null
@@ -1540,3 +1652,4 @@ info.setLife(5)
 // ammo
 info.setScore(20)
 guntype = 1
+finalBos()
