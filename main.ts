@@ -924,23 +924,23 @@ f f f f f f f f f f f f f f f f f f f f f f f f . . . . . . . . . . . . . . . . 
 f f f f f f f f f f f f f f f 3 3 . . f f f f f . . . . . . . . . 5 . . . 3 . . f f f f f f f f f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f . . . . f f f f f . . . 5 . . . f f f f f f . . . f f f f f f f f f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f . . . . f f f f f . . . . . . . f f f f f f . . . f f f f f f f f f f f f f f f f f f f f f f f f 
-f f f f f f f f f f . . . . . . . . . f f f f f 5 . . . . 5 . f f f f f f 3 . . f f f f f f f f f f f f f f f f f f f f f f f f 
-f f f f f f f f f f . . . . . . 5 5 . . . 9 9 . . . . . . . . . . . . . . . . . f f f f f f f f f f f f f f f f f f f f f f f f 
-f f f f f f f f f f . . . . . . 5 5 . . . 9 9 . . . . 5 . . 7 7 . . . . . . . . f f f f f f f f f f f f f f f f f f f f f f f f 
-f f f f f f f f f f . . . . . . . . . f f f f f f f . . . 7 7 f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f f f f f f f f f f f . . . 7 7 f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f f f f f f f f f f f . . 5 . 7 f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f f f f f f f f f f f 7 . . . 7 f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
+f f f f f f f f f f 7 . . . . . . . . f f f f f 5 . . . . 5 . f f f f f f 3 . . f f f f f f f f f f f f f f f f f f f f f f f f 
+f f f f f f f f f f 7 . . . . . 5 5 . . . 9 9 . . . . . . . . . . . . . . . . . f f f f f f f f f f f f f f f f f f f f f f f f 
+f f f f f f f f f f 7 . . . . . 5 5 . . . 9 9 . . . . 5 . . 7 7 . . . . . . . . f f f f f f f f f f f f f f f f f f f f f f f f 
+f f f f f f f f f f 7 . . . . . . . . f f f f f f f . . . 7 7 f f f 7 f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f f f f f f f f f f f . . . 7 7 f f f 7 f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f f f f f f f f f f f . . 5 . 7 f f f 7 f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f f f f f f f f f f f 7 . . . 7 f f f 7 f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f f f f f f f f 7 7 . . 7 7 7 . . . . . . f f f f f f f f f f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f f f f f f f f 7 7 5 . 7 7 . . . . . . . . e e . . . . f f f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f f f f f f f f 7 7 . . 7 . . . . . . . . . e e . . . . f f f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f f f f f f f f 7 7 . . . . . . . . . . . f f f f f . . f f 7 7 7 7 7 7 7 7 f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f f f f f f f f 7 7 . 5 . . 5 . . 5 . . . f f f f f . . . . . . . . . . . 7 f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f . . f f f f f . . . . . . . . . . . 7 f f f f f f f f 
-f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f e e f f f f f f f f f 7 e e e e e e 7 f f f f f f f f 
-f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f e e f f f f f f f f f 7 5 . 5 . 5 . 7 f f f f f f f f 
-f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f . . f f f f f f f f f 7 . . . . . . 7 f f f f f f f f 
-f f f f f f f f f f f f f f f f f f f 7 7 7 7 7 7 7 7 . 5 5 5 f f f f f f . . f f f f f f f f f 7 . . 5 . . . 7 f f f f f f f f 
+f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f e e f f f f f f . . 7 7 e e e e e e 7 f f f f f f f f 
+f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f e e f f f f f f . . 7 7 5 . 5 . 5 . 7 f f f f f f f f 
+f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f . . f f f f f f . . e . . . . . . . 7 f f f f f f f f 
+f f f f f f f f f f f f f f f f f f f 7 7 7 7 7 7 7 7 . 5 5 5 f f f f f f . . f f f f f f . . e . . . 5 . . . 7 f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f 7 7 7 7 7 7 7 . d d d d f f f f f f . . f f f f f f f f f 7 . . . . . . 7 f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f 7 7 7 7 7 7 . . . . . . . . d d . . . . f f f f f f f f f 7 . . . a . . 7 f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f 7 7 7 7 5 5 d . . . . . . . d d . . . . f f f f f f f f f 7 7 . . 3 . . 7 f f f f f f f f 
@@ -950,22 +950,22 @@ f f f f f f f f f f f f f f f f f f f 7 . . f f f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f 7 . . f f f f f f f f f f f f f f f f f f f f f f f f f f f 7 7 . . 7 7 7 f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f 7 . . f f f f f f f f f f f f f f f f f f f f f f f f f f f 7 7 7 7 7 7 f f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f 7 . . f f f f f f f f f f f f f f f f f f f f f f f f f f f f 7 7 7 7 7 f f f f f f f f f 
-f f f f f f f f f f f f f f f f f f f c c c . . . . . . . . . . . f f f f f f f f f f f f f f f f f 7 7 7 7 f f f f f f f f f f 
-f f f f f f f f f f f f f f f f f f f c c c b . . . b . . . b . . f f f f f f f f f f f f f f f f f f 7 7 f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f f f f b . . . . b . . . b . . . b f f f f f f f f f . 2 . . . . . . . 3 3 f f f f f f f f f f f 
-f f f f f f f f f f f f f f f 3 . 1 1 . . . b . . . b . . . b . . f f f f f f f f f b . b . b . b . b 3 3 f f f f f f f f f f f 
-f f f f f f f f f f f f f f f 3 . 1 1 . b . . . . . . . . . . . . . 4 4 4 4 4 4 4 . . . . . . . . . . f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f . . f f f . . . . . . . . . b . b . . 4 4 4 4 4 4 4 . . b . b . b . b . f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f . . f 7 f 3 . . . . . . . . . . . 3 f f f f f f f f f . . . . . . . . . f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f . . f 7 f 3 . . . . . . . . . . . 3 f 7 7 7 7 7 7 7 f b . b . b . b . b f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f . . f 7 f f f f f f f f f f f f f f f 7 7 7 7 7 7 7 f . . . . . . . . . f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f . . f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f . b . b . b . b . f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f . . f 7 7 7 7 7 7 7 7 7 f f f f f f f f f f f f 7 7 7 f . . f f f . . . f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f . . f 7 7 7 7 7 7 7 7 7 f 3 . . . . . . . . . 3 f f f f . . f f f . . b f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f . . f f f f f f f f f f f . . . . . . . . . . 6 f f f f . . f f f . . . f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f b b b b b b b b b b 1 1 . . . . . . . . . . . 6 f f f . . . . . . . . . f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f 5 5 5 5 5 5 5 5 5 5 1 1 . . . . . . . . . . . 6 f f f . . . . . . . . . f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f f f f f f f f f f f f f 1 1 1 1 1 1 1 1 1 1 f f f f f f f f f f f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f f f f c c c . . b . . . b . . . b f f f f f f f f f f f f f f f f f 7 7 7 7 f f f f f f f f f f 
+f f f f f f f f f f f f f f f f f f f c c c b . . . b b . b b . . f f f f f f f f f f f f f f f f f f 7 7 f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f f f f b . b . . b . . . b . . . b f f f f f f f f f . 2 . . . . . . . 3 3 f f f f f f f f f f f 
+f f f f f f f f f f f f f f f 3 . 1 1 . . . b . . . b . b . b . . f f f f f f f f f b . b . b . b . b 3 3 f f f f f f f f f f f 
+f f f f f f f f f f f f f f f 3 . 1 1 . b . . . . . . . . . . . . . 4 4 4 4 4 4 4 . . b . . b . b . . f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f . . 7 f f . . . . . . . . . b . b . . 4 4 4 4 4 4 4 . . b . b . b . b . f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f . . 7 7 f 3 . . . . . . . . . . . 3 f f f f f f f f f . . . . . . . . . f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f . . 7 7 f 3 . . . . . . . . . . . 3 f 7 7 7 7 7 7 7 f b . b . b . b . b f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f . . 7 7 f 7 7 7 7 f f f f f 7 7 7 7 f 7 7 7 7 7 7 7 f . b . b . b . b . f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f . . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f . b . b . b . b . f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f . . 7 7 7 7 7 7 7 7 7 7 f f f f f 7 7 f f f f f 7 7 7 f . . f f f 7 . . f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f . . 7 f f f f f f f f 7 f 3 . . . 7 7 b . . . 3 f f f f . . f f f 7 . b f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f . . . . . . . . . . f f f . . . . 7 7 b . . . 6 f f f f . . 7 7 7 7 . . f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f b b b b b b b b b b 1 1 . . . . . 7 7 b . . . 6 f f f f . . . . . . . . f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f 5 5 5 5 5 5 5 5 5 5 1 1 . . . . . 7 7 . . . . 6 f f f f . . . . . . . . f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f f f f f f f f f f f f f 1 1 1 1 7 7 1 1 1 1 f f f f f f f f f f f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f f f f f f f f f f . . . . . . . . . . f f f f f f f f f f f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f f f f f f f f f f . . . . . . . . . . f f f f f f f f f f f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f f f f f f f f f f f f f 8 8 8 8 8 8 8 8 8 8 f f f f f f f f f f f f f f f f f f f f f f f f f f 
@@ -1770,7 +1770,7 @@ game.showLongText("game by dylan", DialogLayout.Bottom)
 level = 0
 info.setLife(5)
 // ammo
-info.setScore(20)
+info.setScore(100)
 guntype = 1
 game.onUpdateInterval(1500, function () {
 	
