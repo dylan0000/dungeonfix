@@ -683,6 +683,9 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Enemy, function (sprite2, otherSp
 function levels () {
     if (level == 1) {
         game.splash("tutorial")
+        game.splash("Controls", "Keyboard X to rotate direction")
+        game.splash("Space bar to shoot", "Arrow keys to move")
+        game.splash("shoot buttons to activiate", "collect ammo")
         sprite()
         scene.setTileMap(img`
 f f f f f f 7 7 7 f f f f f f f f f f f f f f f f f f f f f 
